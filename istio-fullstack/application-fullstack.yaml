@@ -175,6 +175,8 @@ metadata:
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-type: external
     service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+    service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: instance
+
 spec:
   # This defines which pods are going to be represented by this Service
   # The service becomes a network endpoint for either other services
@@ -184,6 +186,7 @@ spec:
   ports:
     - name: http
       port: 80
+      targetPort: 80
   type: LoadBalancer
 ---
 apiVersion: v1

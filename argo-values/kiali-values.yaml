@@ -1,0 +1,15 @@
+auth:
+  strategy: anonymous
+
+deployment:
+  accessible_namespaces:
+    - "**"
+
+external_services:
+  prometheus:
+    url: http://prometheus-kube-prometheus-prometheus.monitoring:9090
+  grafana:
+    enabled: true
+    url: http://prometheus-grafana.monitoring:80
+  istio:
+    root_namespace: istio-system

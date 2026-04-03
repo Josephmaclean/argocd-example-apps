@@ -2,7 +2,6 @@ jaeger:
   replicas: 1
 
 # Keep it internal for now. Expose later with an Ingress/Gateway if you want.
-jaeger:
   service:
     annotations: {}
 

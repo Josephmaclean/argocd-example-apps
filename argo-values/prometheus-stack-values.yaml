@@ -32,6 +32,18 @@ prometheus:
         - __meta_kubernetes_pod_name
         target_label: kubernetes_pod_name
 
+additionalPrometheusRulesMap:
+  istio-recording-rules:
+    groups:
+      - name: istio.recording.rules
+        interval: 30s
+        rules:
+          - record: workload:istio_requests_total
+            expr: |
+              sum without(instance, kubernetes_namespace, kubernetes_pod_name) (
+                istio_requests_total
+              )
+
 grafana:
   sidecar:
     dashboards:

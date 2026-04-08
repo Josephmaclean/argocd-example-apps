@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: position-simulator
-        image: richardchesterwood/istio-fleetman-position-simulator:6-placeholder
+        image: richardchesterwood/istio-fleetman-position-simulator:6
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice

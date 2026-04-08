@@ -80,6 +80,7 @@ spec:
     metadata:
       labels:
         app: webapp
+        version: stable
     spec:
       containers:
       - name: webapp
